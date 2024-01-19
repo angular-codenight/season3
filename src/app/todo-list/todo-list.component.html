@@ -12,8 +12,11 @@
 <!--<div app-todo-list-item></div>-->
 <!--<div app-todo-list-item></div>-->
 <!--==========================class=================-->
-<button class="btn btn-success" [disabled]="!isAllowNewTask()" [class.btn-danger]="isDanger">add new Task</button>
-<h1>{{allowNewTask}}</h1>
+<button class="btn btn-success"
+        [disabled]="!isAllowNewTask()"
+        [class.btn-danger]="isDanger"
+(click)="addNewTask()">add new Task</button>
+<h1>{{newTask}}</h1>
 <div class="app-todo-list-item"></div>
 <div class="app-todo-list-item"></div>
 <div class="app-todo-list-item"></div>
