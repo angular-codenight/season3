@@ -1,4 +1,7 @@
-.title{
-  font-style: italic;
-  color: red;
+.add-todo {
+  display: flex;
+  margin-bottom: 10px;
+  button{
+    min-width: 15rem;
+  }
 }

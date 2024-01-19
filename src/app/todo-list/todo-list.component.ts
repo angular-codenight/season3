@@ -1,43 +1,21 @@
-import {Component} from "@angular/core";
-
+import { Component } from '@angular/core';
 
 @Component({
-  selector:'app-todo-list',
-  // templateUrl:'todo-list.component.html',
-  templateUrl:'todo-list.component.html',
-  // styleUrls:['todo-list.component.scss']
-  styles:[`
-    .title{
-      font-style: italic;
-      color: green;
-    }
-
-  `]
+  selector: 'app-todo-list',
+  templateUrl: './todo-list.component.html',
+  styleUrls: ['./todo-list.component.scss']
 })
-export class TodoListComponent{
-  allowNewTask=false;
-  isDanger=false;
-  taskCreated= 'the task has not been created';
-  showNewTask=false;
+export class TodoListComponent {
+  tasks:string[]=[]
   newTask='';
-  newTaskTwoWay='task-two-way';
-  constructor() {
-    setTimeout(()=>{
-      this.allowNewTask=true;
-      this.isDanger=true
-    },5000)
+
+  addNewTask() {
+    if(this.newTask){
+      this.tasks.push(this.newTask);
+    }
   }
 
-  isAllowNewTask(){
-    return this.allowNewTask;
-  }
-
-  addNewTask(){
-    this.taskCreated='task created';
-    this.showNewTask=true;
-  }
-
-  changeTaskName($event: any) {
-    this.newTask=$event.target.value;
+  onRemoveTask() {
+    this.tasks.pop();
   }
 }
