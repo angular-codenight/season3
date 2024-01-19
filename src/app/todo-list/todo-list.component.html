@@ -13,11 +13,13 @@
 <!--<div app-todo-list-item></div>-->
 <!--==========================class=================-->
 <input class="form-control mb-3" placeholder="enter task name" (input)="changeTaskName($event)">
+<input class="form-control mb-3" placeholder="two-way data-binding" [(ngModel)]="newTaskTwoWay" >
 <button class="btn btn-success"
         [disabled]="!isAllowNewTask()"
         [class.btn-danger]="isDanger"
 (click)="addNewTask()">add new Task</button>
-<h1>{{newTask}}</h1>
+<h1>{{taskCreated}}</h1>
+<h1>{{newTaskTwoWay}}</h1>
 <h1 [class.d-none]="!showNewTask">{{newTask}}</h1>
 <div class="app-todo-list-item"></div>
 <div class="app-todo-list-item"></div>
