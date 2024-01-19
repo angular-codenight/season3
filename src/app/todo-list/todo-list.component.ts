@@ -24,4 +24,8 @@ export class TodoListComponent{
       this.isDanger=true
     },5000)
   }
+
+  isAllowNewTask(){
+    return this.allowNewTask;
+  }
 }
