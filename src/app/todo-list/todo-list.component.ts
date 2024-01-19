@@ -4,15 +4,7 @@ import {Component} from "@angular/core";
 @Component({
   selector:'app-todo-list',
   // templateUrl:'todo-list.component.html',
-  template:`
-    <h3 class="title">
-      todo list component2
-    </h3>
-    <app-todo-list-item></app-todo-list-item>
-    <app-todo-list-item></app-todo-list-item>
-    <app-todo-list-item></app-todo-list-item>
-    <app-todo-list-item></app-todo-list-item>
-  `,
+  templateUrl:'todo-list.component.html',
   // styleUrls:['todo-list.component.scss']
   styles:[`
     .title{
@@ -22,4 +14,14 @@ import {Component} from "@angular/core";
 
   `]
 })
-export class TodoListComponent{}
+export class TodoListComponent{
+  allowNewTask=false;
+  isDanger=false;
+
+  constructor() {
+    setTimeout(()=>{
+      this.allowNewTask=true;
+      this.isDanger=true
+    },5000)
+  }
+}
