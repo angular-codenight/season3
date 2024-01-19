@@ -1,28 +1,22 @@
-<h3 style="font-style: italic">
-  todo list component
-</h3>
-<!--<app-todo-list-item></app-todo-list-item>-->
-<!--<app-todo-list-item></app-todo-list-item>-->
-<!--<app-todo-list-item></app-todo-list-item>-->
-<!--<app-todo-list-item></app-todo-list-item>-->
+<div class="row">
+  <div class="col-xs-12">
+    <h2 class="mb-3">My Task</h2>
+    <div class="add-todo">
+      <input class="form-control" [(ngModel)]="newTask"  placeholder="enter your task" />
+      <button class="btn btn-outline-warning mx-3" (click)="addNewTask()">Add Task</button>
+    </div>
 
-<!--==========================attribute=================-->
-<!--<div app-todo-list-item></div>-->
-<!--<div app-todo-list-item></div>-->
-<!--<div app-todo-list-item></div>-->
-<!--<div app-todo-list-item></div>-->
-<!--==========================class=================-->
-<input class="form-control mb-3" placeholder="enter task name" (input)="changeTaskName($event)">
-<input class="form-control mb-3" placeholder="two-way data-binding" [(ngModel)]="newTaskTwoWay" >
-<button class="btn btn-success"
-        [disabled]="!isAllowNewTask()"
-        [class.btn-danger]="isDanger"
-(click)="addNewTask()">add new Task</button>
-<h1>{{taskCreated}}</h1>
-<h1>{{newTaskTwoWay}}</h1>
-<h1 [class.d-none]="!showNewTask">{{newTask}}</h1>
-<div class="app-todo-list-item"></div>
-<div class="app-todo-list-item"></div>
-<div class="app-todo-list-item"></div>
-<div class="app-todo-list-item"></div>
-<div class="app-todo-list-item"></div>
+
+
+    <br><br>
+    <div
+      class="alert alert-warning d-flex align-items-center justify-content-between"
+      [class.d-none]="tasks.length===0"
+    ><h3>
+      {{newTask}}
+    </h3>
+      <button class="btn btn-danger" (click)="onRemoveTask()">Delete</button>
+    </div>
+
+  </div>
+</div>
