@@ -18,6 +18,7 @@ export class TodoListComponent{
   allowNewTask=false;
   isDanger=false;
   newTask= 'the task has not been created';
+  showNewTask=false;
   constructor() {
     setTimeout(()=>{
       this.allowNewTask=true;
@@ -30,6 +31,11 @@ export class TodoListComponent{
   }
 
   addNewTask(){
-    this.newTask='task created'
+    this.newTask='task created';
+    this.showNewTask=true;
+  }
+
+  changeTaskName($event: any) {
+    this.newTask=$event.target.value;
   }
 }
