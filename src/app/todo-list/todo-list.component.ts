@@ -17,8 +17,10 @@ import {Component} from "@angular/core";
 export class TodoListComponent{
   allowNewTask=false;
   isDanger=false;
-  newTask= 'the task has not been created';
+  taskCreated= 'the task has not been created';
   showNewTask=false;
+  newTask='';
+  newTaskTwoWay='task-two-way';
   constructor() {
     setTimeout(()=>{
       this.allowNewTask=true;
@@ -31,7 +33,7 @@ export class TodoListComponent{
   }
 
   addNewTask(){
-    this.newTask='task created';
+    this.taskCreated='task created';
     this.showNewTask=true;
   }
 
